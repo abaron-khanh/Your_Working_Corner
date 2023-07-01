@@ -1,1 +1,47 @@
-<p>products works!</p>
+<div class="my-container mx-auto border border-dark">
+    <div class="border mb-5 p-3 d-flex justify-content-around">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-outline-secondary"
+                [ngClass]="{'active': view == 'grid'}" 
+                (click)="view = 'grid'">Grid</button>
+            <button type="button" class="btn btn-outline-secondary"
+                [ngClass]="{'active': view == 'list'}" 
+                (click)="view = 'list'">List</button>
+        </div>
+
+        <div class="w-50 d-flex">
+            <span class="me-5 d-flex aligh-items-center fs-5 fw-bold">Lọc theo</span>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-secondary"
+                    [ngClass]="{'active': sortBy == 'default'}" 
+                    (click)="sortBy = 'default'">Mặc định</button>
+                <button type="button" class="btn btn-outline-secondary"
+                    [ngClass]="{'active': sortBy == 'highToLow'}" 
+                    (click)="sortBy = 'highToLow'">Giá (Cao tới thấp)</button>
+                <button type="button" class="btn btn-outline-secondary"
+                    [ngClass]="{'active': sortBy == 'lowToHigh'}" 
+                    (click)="sortBy = 'lowToHigh'">Giá (Thấp tới cao)</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="border p-5">
+        <!-- Grid View -->
+        <div class="grid-view" *ngIf="view == 'grid'">
+            <div class="row g-5">
+                <div class="col-3" *ngFor="let product of [1,1,1,1,1]">
+                    <app-product></app-product>
+                </div>
+            </div>
+        </div>
+
+        <!-- List View -->
+        <div class="list-view" *ngIf="view == 'list'">
+            <div class="row mb-5" *ngFor="let product of [1,1,1,1,1]">
+                <div class="col">
+                    <app-product [view]="'list'"></app-product>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
