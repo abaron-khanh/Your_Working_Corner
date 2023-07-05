@@ -15,7 +15,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title text-success">
-                Giá khuyến mại
+                Giá thanh toán
                 <span class="text-primary">
                     -20%
                 </span>
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="card-body">
-                    <h4 class="card-title text-muted">Giá bán</h4>
+                    <h4 class="card-title text-muted">Giá thanh toán</h4>
                     <h2 class="card-title text-success">
                         Giá khuyến mại
                         <span class="text-primary">-20% </span>
@@ -60,6 +60,46 @@
                     <button class="btn btn-outline-success" type="button">Thêm vào giỏ hàng</button>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cart Item View -->
+<div class="cart-item-view" *ngIf="view == 'currentCartItem'">
+    <div class="card">
+        <div class="row g-0">
+
+            <div class="col-4 overflow-hidden d-flex justify-content-center align-items-center">
+                <img src="../../assets/Images/laptops/3/1.jpg" class="img-fluid rounded-start" alt="Product Image">
+            </div>
+            <div class="col-8">
+                <div class="card-body">
+                    <h5 class="card-title title">Tiêu đề</h5>
+                    <h5 class="card-title text-success"> Giá thanh toán 
+                        <span class="text-primary"> Còn 11 sản phẩm. </span>
+                    </h5>
+                    <h6 class="card-subtitle text-danger text-decoration-line-through"> Giá gốc </h6>
+                </div>
+
+                <div class="card-footer text-muted d-grid gap-2">
+                    <button class="btn btn-outline-danger" type="button">Xóa khỏi giỏ hàng</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Previous Cart Item View -->
+<div class="cart-item-view" *ngIf="view == 'prevCartItem'">
+    <div class="card text-center">
+
+        <div class="overflow-hidden d-flex justify-content-center align-items-center">
+            <img src="../../assets/Images/laptops/2/1.jpg" alt="" class="card-img-top">
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title title"> Tiêu đề </h5>
         </div>
     </div>
 </div>
